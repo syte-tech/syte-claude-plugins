@@ -25,6 +25,7 @@ Official Claude Code plugins for the syte team.
 | AI Ticket | `/syte-tickets:ai-ticket` | Create AI/ML team tickets with metrics tracking | Notion MCP |
 | Data Ticket | `/syte-tickets:data-ticket` | Create data pipeline tickets with validation sections | Notion MCP |
 | Update Changelog | `/syte-tickets:update-changelog` | Update CHANGELOG.md with recent git commits in Linear format | Bash, Read, Edit |
+| Release Changelog | `/syte-tickets:release-changelog` | Generate changelog between version tags and save to Notion | Bash, Read, Notion MCP |
 
 ## Prerequisites
 
@@ -102,6 +103,25 @@ Claude will:
 4. Format entries in Linear-inspired style with user-focused descriptions
 5. Insert new entries at the top of CHANGELOG.md
 
+### Release Changelog
+
+```
+/syte-tickets:release-changelog v3.33.0..v3.34.0
+```
+
+Generate user-friendly release notes between version tags:
+- `v3.33.0..v3.34.0` — Changes between two specific tags
+- `v3.34.0` — Changes from previous tag to specified tag
+- `next` — Preview of unreleased changes since last tag
+- No arguments — Changes between the last two version tags
+
+Claude will:
+1. Gather changes from syte-frontend and syte-backend repos
+2. Filter out dependabot/version-only commits
+3. Categorize and rewrite items in user-friendly language
+4. Format as Notion-flavored markdown
+5. Save to the syte Notion Changelog page (with confirmation)
+
 ## Tool Restrictions
 
 Each skill has `allowed-tools` configured to limit which tools Claude can use:
@@ -113,6 +133,7 @@ Each skill has `allowed-tools` configured to limit which tools Claude can use:
 | `ai-ticket` | `mcp__plugin_Notion_notion__*` |
 | `data-ticket` | `mcp__plugin_Notion_notion__*` |
 | `update-changelog` | `Bash`, `Read`, `Edit` |
+| `release-changelog` | `Bash`, `Read`, `mcp__plugin_Notion_notion__*` |
 
 ## Notes
 
