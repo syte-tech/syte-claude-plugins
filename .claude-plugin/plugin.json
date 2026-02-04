@@ -1,0 +1,10 @@
+{
+  "name": "syte-tickets",
+  "description": "syte ticket creation skills for Notion: frontend, backend, AI, and data team tickets",
+  "version": "1.0.0",
+  "author": {
+    "name": "syte"
+  },
+  "homepage": "https://github.com/syte-tech/syte-claude-plugins",
+  "keywords": ["notion", "tickets", "syte", "project-management"]
+}
