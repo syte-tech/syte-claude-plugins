@@ -24,6 +24,7 @@ Official Claude Code plugins for the syte team.
 | Backend Ticket | `/syte-tickets:be-ticket` | Create backend/API tickets with schema templates | Notion MCP |
 | AI Ticket | `/syte-tickets:ai-ticket` | Create AI/ML team tickets with metrics tracking | Notion MCP |
 | Data Ticket | `/syte-tickets:data-ticket` | Create data pipeline tickets with validation sections | Notion MCP |
+| Update Changelog | `/syte-tickets:update-changelog` | Update CHANGELOG.md with recent git commits in Linear format | Bash, Read, Edit |
 
 ## Prerequisites
 
@@ -88,6 +89,19 @@ Claude will guide you through:
 4. Acceptance criteria
 5. Validation and quality checks
 
+### Update Changelog
+
+```
+/syte-tickets:update-changelog
+```
+
+Claude will:
+1. Read your current CHANGELOG.md to find the last entry date
+2. Fetch all commits since that date
+3. Group and categorize commits (Improvements, Fixes, Refactoring, etc.)
+4. Format entries in Linear-inspired style with user-focused descriptions
+5. Insert new entries at the top of CHANGELOG.md
+
 ## Tool Restrictions
 
 Each skill has `allowed-tools` configured to limit which tools Claude can use:
@@ -98,6 +112,7 @@ Each skill has `allowed-tools` configured to limit which tools Claude can use:
 | `be-ticket` | `mcp__plugin_Notion_notion__*` |
 | `ai-ticket` | `mcp__plugin_Notion_notion__*` |
 | `data-ticket` | `mcp__plugin_Notion_notion__*` |
+| `update-changelog` | `Bash`, `Read`, `Edit` |
 
 ## Notes
 

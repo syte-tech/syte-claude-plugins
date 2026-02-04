@@ -11,7 +11,7 @@
     {
       "name": "syte-tickets",
       "source": "./",
-      "description": "Ticket creation skills for Notion: /syte-tickets:fe-ticket, /syte-tickets:be-ticket, /syte-tickets:ai-ticket, /syte-tickets:data-ticket"
+      "description": "syte team skills: ticket creation for Notion + changelog updates"
     }
   ]
 }
